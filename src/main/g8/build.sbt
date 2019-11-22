@@ -8,24 +8,28 @@ resolvers += Resolver.jcenterRepo
 
 libraryDependencies ++= {
   val catsV          = "$cats_version$"
+  val ficusV         = "$ficus_version$"
+  val akkaV          = "$akka_version$"
   val akkaHttpV      = "$akka_http_version$"
   val akkaHttpCirceV = "$akka_http_circe_version$"
   val circeV         = "$circe_version$"
-  val ficusV         = "$ficus_version$"
+  val scalaTestV     = "$scala_test_version$"
   val scalaMockV     = "$scala_mock_version$"
   val catsScalatestV = "$cats_scalatest_version$"
 
   Seq(
-    "org.typelevel"     %% "cats-core"                   % catsV,
-    "com.iheart"        %% "ficus"                       % ficusV,
-    "com.typesafe.akka" %% "akka-http"                   % akkaHttpV,
-    "de.heikoseeberger" %% "akka-http-circe"             % akkaHttpCirceV,
-    "io.circe"          %% "circe-core"                  % circeV,
-    "io.circe"          %% "circe-generic"               % circeV,
-    "io.circe"          %% "circe-parser"                % circeV,
-    "org.scalamock"     %% "scalamock-scalatest-support" % scalaMockV     % "it,test",
-    "com.ironcorelabs"  %% "cats-scalatest"              % catsScalatestV % "it,test",
-    "com.typesafe.akka" %% "akka-http-testkit"           % akkaHttpV      % "it,test"
+    "org.typelevel"     %% "cats-core"         % catsV,
+    "com.iheart"        %% "ficus"             % ficusV,
+    "com.typesafe.akka" %% "akka-http"         % akkaHttpV,
+    "de.heikoseeberger" %% "akka-http-circe"   % akkaHttpCirceV,
+    "io.circe"          %% "circe-core"        % circeV,
+    "io.circe"          %% "circe-generic"     % circeV,
+    "io.circe"          %% "circe-parser"      % circeV,
+    "org.scalatest"     %% "scalatest"         % scalaTestV % "it,test",
+    "org.scalamock"     %% "scalamock"         % scalaMockV % "it,test",
+    "com.ironcorelabs"  %% "cats-scalatest"    % catsScalatestV % "it,test",
+    "com.typesafe.akka" %% "akka-testkit"      % akkaV % "it,test",
+    "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpV      % "it,test"
   )
 }
 
